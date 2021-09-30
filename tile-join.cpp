@@ -82,7 +82,7 @@ void handle(std::string message, int z, unsigned x, unsigned y, std::map<std::st
 		}
 	} catch (std::exception const &e) {
 		fprintf(stderr, "PBF decoding error in tile %d/%u/%u\n", z, x, y);
-		exit(EXIT_FAILURE);
+		return;
 	}
 
 	for (size_t l = 0; l < tile.layers.size(); l++) {
